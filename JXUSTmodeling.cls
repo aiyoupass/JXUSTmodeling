@@ -168,3 +168,116 @@ MSWordLineSpacingMultiple=1.25
 \RequirePackage{hyperref}
 \hypersetup{breaklinks,colorlinks}% 允许超链接断行,取消超链接的边框,使链接文字带颜色
 \hypersetup{hidelinks,bookmarksnumbered=true,bookmarksopen=true,pdfstartview=Fit}% 取消超链接的颜色，书签目录增加编号
+
+\usepackage{minted}
+\makeatletter
+\newlength\savefboxrule
+\newlength\savefboxsep
+\edef\example@name{\jobname-example.aux}
+\newenvironment{hexample}%
+{%
+\renewcommand{\minted@FVB@VerbatimOut}[1]{%
+  \@bsphack
+  \begingroup
+    \FV@DefineWhiteSpace
+    \def\FV@Space{\space}%
+    \FV@DefineTabOut
+    \let\FV@ProcessLine\minted@write@detok
+    \immediate\openout\FV@OutFile ##1\relax
+    \let\FV@FontScanPrep\relax
+    \let\@noligs\relax
+    \FV@Scan}
+\minted@FVB@VerbatimOut{\example@name}}%
+{\minted@FVE@VerbatimOut%
+  \trivlist\item\relax
+  \setlength{\savefboxrule}{\fboxrule}%
+  \setlength{\savefboxsep}{\fboxsep}%
+  \setlength{\fboxsep}{0.015\textwidth}%
+  \setlength{\fboxrule}{0.4pt}%
+  \fcolorbox[gray]{0}{0.95}{%
+    \begin{minipage}[c]{0.45\textwidth}%
+      \setlength{\fboxrule}{\savefboxrule}%
+      \setlength{\fboxsep}{\savefboxsep}%
+      \small\inputminted[breakanywhere,breaklines=true,numbers=left]{latex}{\example@name}%
+    \end{minipage}%
+  }%
+  \hfill%
+  \fbox{%
+    \begin{minipage}[c]{0.45\textwidth}%
+      \setlength{\fboxrule}{\savefboxrule}%
+      \setlength{\fboxsep}{\savefboxsep}%
+      \setlength{\parskip}{1ex plus 0.4ex minus 0.2ex}%
+      \normalsize\input{\example@name}%
+    \end{minipage}%
+  }%
+  \endtrivlist
+}
+\newenvironment{vexample}%
+{%
+\renewcommand{\minted@FVB@VerbatimOut}[1]{%
+  \@bsphack
+  \begingroup
+    \FV@DefineWhiteSpace
+    \def\FV@Space{\space}%
+    \FV@DefineTabOut
+    \let\FV@ProcessLine\minted@write@detok
+    \immediate\openout\FV@OutFile ##1\relax
+    \let\FV@FontScanPrep\relax
+    \let\@noligs\relax
+    \FV@Scan}
+\minted@FVB@VerbatimOut{\example@name}}%
+{\minted@FVE@VerbatimOut%
+  \trivlist\item\relax
+  \setlength{\savefboxrule}{\fboxrule}%
+  \setlength{\savefboxsep}{\fboxsep}%
+  \setlength{\fboxsep}{0.015\textwidth}%
+  \setlength{\fboxrule}{0.4pt}%
+  \begin{minipage}[c]{\textwidth}
+  \fcolorbox[gray]{0}{0.95}{%
+    \begin{minipage}[c]{\textwidth-0.03\textwidth-0.8pt}%
+      \setlength{\fboxrule}{\savefboxrule}%
+      \setlength{\fboxsep}{\savefboxsep}%
+      \small\inputminted[breakanywhere,breaklines=true,numbers=left]{latex}{\example@name}%
+    \end{minipage}%
+  }\\
+  \fbox{%
+    \begin{minipage}[c]{\textwidth-0.03\textwidth-0.8pt}%
+      \setlength{\fboxrule}{\savefboxrule}%
+      \setlength{\fboxsep}{\savefboxsep}%
+      \setlength{\parskip}{1ex plus 0.4ex minus 0.2ex}%
+      \normalsize\input{\example@name}%
+    \end{minipage}%
+  }%
+  \end{minipage}
+  \endtrivlist
+}
+\newenvironment{floatexample}%
+{%
+\renewcommand{\minted@FVB@VerbatimOut}[1]{%
+  \@bsphack
+  \begingroup
+    \FV@DefineWhiteSpace
+    \def\FV@Space{\space}%
+    \FV@DefineTabOut
+    \let\FV@ProcessLine\minted@write@detok
+    \immediate\openout\FV@OutFile ##1\relax
+    \let\FV@FontScanPrep\relax
+    \let\@noligs\relax
+    \FV@Scan}
+\minted@FVB@VerbatimOut{\example@name}}%
+{\minted@FVE@VerbatimOut%
+  \trivlist\item\relax
+  \setlength{\savefboxrule}{\fboxrule}%
+  \setlength{\savefboxsep}{\fboxsep}%
+  \setlength{\fboxsep}{0.015\textwidth}%
+  \setlength{\fboxrule}{0.4pt}%
+  \fcolorbox[gray]{0}{0.95}{%
+    \begin{minipage}[c]{\textwidth-0.03\textwidth-0.8pt}%
+      \setlength{\fboxrule}{\savefboxrule}%
+      \setlength{\fboxsep}{\savefboxsep}%
+      \small\inputminted[breakanywhere,breaklines=true,numbers=left]{latex}{\example@name}%
+    \end{minipage}%
+  }\\
+  \input{\example@name}%
+  \endtrivlist
+}
