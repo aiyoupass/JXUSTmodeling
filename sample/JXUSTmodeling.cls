@@ -106,9 +106,13 @@ MSWordLineSpacingMultiple=1.25
 \RequirePackage{xcolor,listings}
 % 设置代码的默认样式
 \lstset{
-	frame=none,% 取消边框
+  frame=trBL,
+  frameround = fttt,
+  framexleftmargin=4mm,
+  % backgroundcolor=\color{gray},
+	% frame=none,% 取消边框
 	breaklines=true,% 允许自动断行
-	% breakatwhitespace=true,% 使用此命令仅允许在空格处自动断行
+	breakatwhitespace=true,% 使用此命令仅允许在空格处自动断行
 	showstringspaces=false,% 不显示字符串中的空格
 	basicstyle=\small\ttfamily,% 设置代码基本样式
 	flexiblecolumns=true,% 改善字母间距
@@ -116,6 +120,8 @@ MSWordLineSpacingMultiple=1.25
 	stringstyle=\color[rgb]{0.75,0,0.75},% 设置字符串样式
 	commentstyle=\songti\color[rgb]{0,0.5,0},% 设置注释样式
 	tabsize=2,% 设置制表符缩进
+  numbers=left,
+% rulesepcolor=\color{red!20!green!20!blue!20}
 }
 
 % 设置matlab代码环境
@@ -129,6 +135,33 @@ MSWordLineSpacingMultiple=1.25
 		#1
 	}
 }{}
+\lstnewenvironment{mma}[1][]{
+	\lstset{
+		language=Mathematica,
+		keywordstyle=\color[RGB]{255,119,0},% 设置Keywords样式
+		morekeywords={as},% 将特定单词加入Kewords中
+		deletekeywords={print},%从 keywords中去除特定单词
+		keywordstyle=[2]\color[RGB]{144,0,144},% 设置Builtins样式
+		morekeywords=[2]{print},% 将特定单词加入Builtins中
+		stringstyle=\color[RGB]{0,170,0},% 设置字符串样式
+		commentstyle=\songti\color[RGB]{221,0,0},% 设置注释样式	
+		#1
+	}
+}{}
+\lstnewenvironment{cpp}[1][]{
+	\lstset{
+		language=C++,
+		keywordstyle=\color[RGB]{255,119,0},% 设置Keywords样式
+		morekeywords={as},% 将特定单词加入Kewords中
+		deletekeywords={print},%从 keywords中去除特定单词
+		keywordstyle=[2]\color[RGB]{144,0,144},% 设置Builtins样式
+		morekeywords=[2]{print},% 将特定单词加入Builtins中
+		stringstyle=\color[RGB]{0,170,0},% 设置字符串样式
+		commentstyle=\songti\color[RGB]{221,0,0},% 设置注释样式	
+		#1
+	}
+}{}
+
 
 % 设置python代码环境
 \lstnewenvironment{python}[1][]{
@@ -168,6 +201,22 @@ MSWordLineSpacingMultiple=1.25
 \RequirePackage{hyperref}
 \hypersetup{breaklinks,colorlinks}% 允许超链接断行,取消超链接的边框,使链接文字带颜色
 \hypersetup{hidelinks,bookmarksnumbered=true,bookmarksopen=true,pdfstartview=Fit}% 取消超链接的颜色，书签目录增加编号
+
+
+\definecolor{identifiercolor}{rgb}{.4,.6,.56}
+\definecolor{stringcolor}{gray}{0.5}
+\definecolor{inactivecolor}{rgb}{0.15,0.15,0.5}
+% \lstset{basicstyle={\footnotesize\def\fvm@Scale{.85}\fontfamily{fvm}\selectfont},
+%   breaklines=true,
+%   escapeinside={\%*}{*)},
+%   keywordstyle={\bfseries\color{inactivecolor}},
+%   stringstyle={\bfseries\color{stringcolor}},
+%   identifierstyle={\bfseries\color{identifiercolor}},
+%   language=Mathematica,
+%   otherkeywords={DiscretizeRegion},
+%   showstringspaces=false}
+% \renewcommand{\lstlistingname}{Listing}
+
 
 \usepackage{minted}
 \makeatletter
