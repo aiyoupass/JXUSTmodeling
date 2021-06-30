@@ -3,7 +3,7 @@
 \makeatother
 
 \biaoti{全国大学生数学建模竞赛 \LaTeX{} 模板使用手册}
-\keyword{手册；数模；全国大学生数学建模竞赛；\TeX{}；\LaTeX{}}
+\keyword{手册；数模；全国大学生数学建模竞赛；\TeX{}；\LaTeX{}；\XeLaTeX{}；}
 \begin{document}
 
 \begin{abstract}
@@ -112,6 +112,7 @@ $E = mc^2$\par
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.4\textwidth]{example-image.pdf}
+  %width=0.4\textwidth是设置图片宽度为文本宽度的0.4
   \caption{图注}\label{fig:example}
 \end{figure}
 \end{floatexample}
@@ -119,14 +120,14 @@ $E = mc^2$\par
 \begin{floatexample}
 \begin{figure}[htbp]
   \centering
-  \subfloat[子图注]{\label{sub-fig-1}% 为子图加交叉引用
+  \subfloat[子图注1]{\label{sub-fig-1}% 为子图加交叉引用
   \begin{minipage}{0.4\textwidth}
     \centering
     \includegraphics[width=\textwidth]{example-image-a}
   \end{minipage}
   }
-  \qquad
-  \subfloat[子图注]{%
+  \qquad %这个是两幅图片中间那个距离（大概是四个空格）
+  \subfloat[子图注2]{%
   \begin{minipage}{0.4\textwidth}
     \centering
     \includegraphics[width=\textwidth]{example-image-b}
@@ -141,7 +142,7 @@ $E = mc^2$\par
 \begin{hexample}
 数据拟合图像见\ref{fig:example}。
 结果图像见\ref{fig:subexample}
-的子图~\ref{sub-fig-1}。
+的子图\ref{sub-fig-1}。
 结果数据见\ref{tab:example}。
 推导公式见 \ref{eq:example}。
 \end{hexample}
@@ -177,12 +178,12 @@ print("Hello Python world!")
 \begin{appendixx}
   \begin{hexample}
     \section{问题一的 Mathematica 代码}
-    \begin{matlab}
+    \begin{mma}
       Solve[{2 a x + b + x/Sqrt[x^2 + y^2 + z^2] == 0, 
       2 a y + b + y/Sqrt[x^2 + y^2 + z^2] == 0, 
       b + z/Sqrt[x^2 + y^2 + z^2] == 0, x^2 + y^2 == 1, 
       x + y + z == 0}, {x, y, z, a, b}]
-    \end{matlab}
+    \end{mma}
   
     \section{问题二的 C++ 代码}
     \begin{minted}{c++}

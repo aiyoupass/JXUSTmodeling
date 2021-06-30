@@ -217,7 +217,7 @@ MSWordLineSpacingMultiple=1.25
 %   showstringspaces=false}
 % \renewcommand{\lstlistingname}{Listing}
 
-
+\usepackage{xltxtra}
 \usepackage{minted}
 \makeatletter
 \newlength\savefboxrule

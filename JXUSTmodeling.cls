@@ -42,6 +42,7 @@ MSWordLineSpacingMultiple=1.25
 	}
 }
 
+\usepackage{xltxtra}
 \def\biaoti#1{\gdef\@biaoti{#1}}
 \def\keyword#1{\gdef\@keyword{#1}}
 \renewenvironment{abstract}%
@@ -106,11 +107,11 @@ MSWordLineSpacingMultiple=1.25
 \RequirePackage{xcolor,listings}
 % 设置代码的默认样式
 \lstset{
-  frameround = fttt,
-  framexleftmargin=4mm,
-  frame=shadowbox,
-  backgroundcolor=\color{gray},
-	frame=none,% 取消边框
+  % frameround = fttt,
+  % framexleftmargin=4mm,
+  % frame=shadowbox,
+  % backgroundcolor=\color{gray},
+	% frame=none,% 取消边框
 	breaklines=true,% 允许自动断行
 	% breakatwhitespace=true,% 使用此命令仅允许在空格处自动断行
 	showstringspaces=false,% 不显示字符串中的空格
@@ -136,9 +137,8 @@ MSWordLineSpacingMultiple=1.25
 \lstnewenvironment{mma}[1][]{
 	\lstset{
 		language=Mathematica,
-		keywordstyle=\color[RGB]{255,119,0},% 设置Keywords样式
-		morekeywords={as},% 将特定单词加入Kewords中
-		deletekeywords={print},%从 keywords中去除特定单词
+		keywordstyle=\color[RGB]{255,100,100},% 设置Keywords样式
+		% morekeywords={as, Solve, Sqrt, Int, Series},% 将特定单词加入Kewords中
 		keywordstyle=[2]\color[RGB]{144,0,144},% 设置Builtins样式
 		morekeywords=[2]{print},% 将特定单词加入Builtins中
 		stringstyle=\color[RGB]{0,170,0},% 设置字符串样式
