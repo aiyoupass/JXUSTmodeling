@@ -1,0 +1,48 @@
+%!TEX program = xelatex
+\documentclass[11pt,UTF8,notitlepage]{article}
+    \usepackage[colorlinks,linkcolor=blue]{hyperref}
+    \usepackage{fontspec}
+    \usepackage{xunicode}
+    \usepackage{xltxtra}
+    \usepackage{amstext}
+    \usepackage{amsmath}
+    \usepackage{amssymb}
+    \usepackage{listings} 
+    \usepackage{pifont}
+    \usepackage{xcolor}
+    \usepackage{enumerate}
+    \usepackage{enumitem}
+    \usepackage{amsthm}
+    \usepackage{xeCJK}
+    \usepackage{ulem}
+    
+    \setlist[enumerate,1]{label=(\arabic*).,font=\textup,
+        leftmargin=7mm,labelsep=1.5mm,topsep=0mm,itemsep=-0.8mm}
+    \setlist[enumerate,2]{label=(\alph*).,font=\textup, 
+        leftmargin=7mm,labelsep=1.5mm,topsep=-0.8mm,itemsep=-0.8mm}
+    \lstset{numbers=left, 
+        numberstyle= \tiny, 
+        keywordstyle= \color{ blue!70},commentstyle=\color{red!50!green!50!blue!50}, 
+        frame=shadowbox, 
+        ,rulesepcolor= \color{ red!20!green!20!blue!20},escapeinside=``
+    }
+    
+    
+    \newtheorem{mypro}{Proposition}[section]
+    
+    
+    \title{题目}
+    
+    \begin{document}
+    \maketitle
+    \tableofcontents
+    \section{题目背景}
+    目前国际上进行火箭发射的方式是多级火箭。
+    \section{问题一}
+    单级火箭发射可行吗
+    \section{问题二}
+    多级火箭发射的合理性
+    \section{问题三}
+    计算出相关参数
+    \end{document}
+    
