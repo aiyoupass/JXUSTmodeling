@@ -12,7 +12,7 @@
 2. 安装`TeX Live`（非便携安装）
 3. Clone 这个库，得到模板源代码文件
 4. 安装一个合适的`LaTeX`编辑器（例如`TeX Studio`或`Visual Studio Code` 搭配`LaTeX Workshop`插件）
-8. 安装`Python`高版本及`pygments`（安装命令`pip install Pygments`)
+8. 安装`Python`高版本及`pygments`（安装命令`pip install Pygments`),如果不在论文中加代码的话不需要这一步
 5. 设置正确的编译选项(用`XeLaTeX`编译，编译选项`-shell-escape`等)
 6. 简短的编译命令`xelatex 源代码文件`（目录需要编译两遍）
 7. 完整的编译命令`xelatex -synctex=1 -shell-escape -interaction=nonstopmode -file-line-error 源代码文件`（这个模板必须加上这些参数才能编译成功）

@@ -82,9 +82,12 @@ $E = mc^2$\par
 \end{hexample}
 如果要添加竖线，建议用 \mintinline{latex}{\Xhline{线宽}} 制作三线表
 \begin{hexample}
-\begin{tabularx}{\textwidth}{c@{\hspace{1pc}}|@{\hspace{1pc}}X}
+\begin{tabularx}{\textwidth}{  c   @{\hspace{1pc}}  |  @{\hspace{1pc}}   Y   }
+  % @{\hspace{1pc}}表示一个长度为1pc的空白
+  % c和 Y 是两种不同的居中对齐方式,可自行更改尝试
+  % | 表示在两列中间画一条竖线
   \Xhline{0.08em}
-  符号 & \multicolumn{1}{c}{符号说明}\\
+  符号 & 符号说明\\
   \Xhline{0.05em}
   $\int$ & 积分符号\\
   \Xhline{0.08em}
