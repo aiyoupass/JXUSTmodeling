@@ -20,4 +20,5 @@
 ## 备注
 1. `document`文件夹中的两个文件可以当词典来用，不需要完整阅读
 2. 推荐（可以）根据`sample`中的一个简单实例以及`example.pdf`来学习
-3. 遇到不会的问题学会使用`google`等搜索引擎查找答案，通常`stackexchange`中的`TeX`专区<https://www.tex.stackexchange.com>会找到令人满意的答案。
+3. 遇到不会的问题学会使用`google\baidu`等搜索引擎查找答案，通常`stackexchange`中的`TeX`专区<https://www.tex.stackexchange.com>会找到令人满意的答案。
+4. 插入代码可以使用`minted`,`listings`两种方式，定义了`mma`,`python`,`matlab`,`cpp`四种代码的环境
